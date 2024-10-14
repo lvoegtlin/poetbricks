@@ -1,33 +1,21 @@
 [tool.poetry]
 name = "poetbricks"
-version = "0.1.1"
+version = "0.1.0"
 description = "A little CLI tool to create requirements.txt file that are compatible with databricks. The produced requirement file can be uploaded to databricks to set up any custom compute."
 authors = ["Lars Vögtlin"]
 readme = "README.md"
-license = "GPL-3.0-or-later"
-keywords = ['poetry', 'databricks', 'requirement', 'pip']
-classifiers = [  
-	"Development Status :: 4 - Beta",
-	"Programming Language :: Python"
-]
-packages = [{include = "poetbricks"}]
-
-[project.urls]
-Homepage = "https://github.com/lvoegtlin/poetbricks"
-Repository = "https://github.com/lvoegtlin/poetbricks"
 
 [tool.poetry.dependencies]
-python = ">=3.11"
+python = "^3.12"
+lightning = "^2.4.0"
+torchmetrics = "^1.18.0"
 requests = "^2.32.3"
+
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.3"
 requests-mock = "^1.12.1"
-pytest-mock = "^3.14.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.scripts]
-poetbricks = 'poetbricks.main:entry'
