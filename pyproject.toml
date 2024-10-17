@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "poetbricks"
-version = "0.1.1"
+version = "0.1.2"
 description = "A little CLI tool to create requirements.txt file that are compatible with databricks. The produced requirement file can be uploaded to databricks to set up any custom compute."
 authors = ["Lars Vögtlin"]
 readme = "README.md"
