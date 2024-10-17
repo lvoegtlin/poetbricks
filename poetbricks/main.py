@@ -75,7 +75,7 @@ def get_dbx_requirement_list(version: float) -> Dict[str, str]:
     if check_dbx_file_exists(version=version):
         return get_requirement_file(version=version)
 
-    req_dict = get_dbx_requirement_list(version=version)
+    req_dict = get_requirement_dict_from_server(version=version)
     save_req_dict(req_dict=req_dict, version=version)
 
     return req_dict
@@ -96,6 +96,7 @@ def get_requirement_dict_from_server(version: float) -> Dict[str, str]:
     req_dict = {
         line.split("==")[0]: line.split("==")[1]
         for line in req_file_content.split("\n")
+        if line != ""
     }
     return req_dict
 
