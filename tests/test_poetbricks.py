@@ -1,9 +1,9 @@
-import requests_mock
-
 from pathlib import Path
 
-from poetbricks.main import check_first_run, get_requirement_dict_from_server
+import requests_mock
+
 from poetbricks import main
+from poetbricks.main import check_first_run, get_requirement_dict_from_server
 
 
 def test_check_first_run_correct(tmp_path: Path, monkeypatch, capfd):

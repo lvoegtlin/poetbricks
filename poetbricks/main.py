@@ -1,9 +1,10 @@
-import tomllib
-import requests
-from pathlib import Path
-from argparse import ArgumentParser
 import json
-from typing import Dict, Any
+from argparse import ArgumentParser
+from pathlib import Path
+from typing import Any, Dict
+
+import requests
+import tomllib
 
 POETBRICKS_SETTINGS_ROOT_PATH = Path("~/.poetbricks").expanduser()
 POETBRICKS_DBX_REQUIREMENT_PATH = POETBRICKS_SETTINGS_ROOT_PATH / "dbx_req"
