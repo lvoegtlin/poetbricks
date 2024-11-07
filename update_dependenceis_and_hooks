@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Update Poetry dependencies..."
+poetry update
+
+echo "Update pre-commit dependencies..."
+pre-commit autoupdate
