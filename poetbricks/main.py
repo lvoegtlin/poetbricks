@@ -92,7 +92,7 @@ def get_requirement_dict_from_server(version: float) -> Dict[str, str]:
         f"https://docs.databricks.com/en/_extras/documents/requirements-{version}.txt"
     )
 
-    req_file_request = requests.get(req_url, allow_redirects=True)
+    req_file_request = requests.get(req_url, allow_redirects=True, timeout=5)
     req_file_content = req_file_request.content.decode("UTF-8")
     req_dict = {
         line.split("==")[0]: line.split("==")[1]
