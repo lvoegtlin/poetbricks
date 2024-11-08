@@ -40,9 +40,8 @@ class PythonRequirement(ABC):
     def source_path(self, value: Path):
         self._source_path = value
 
-    @classmethod
+    @staticmethod
     def complement_requirements(
-        cls,
         source: "PythonRequirement",
         check: "PythonRequirement",
     ) -> Dict[str, str]:
@@ -52,16 +51,15 @@ class PythonRequirement(ABC):
             if k not in check.requirements.keys()
         }
 
-    @classmethod
     def save_complement_requirement_file(
-        cls, requirements: Dict[str, str], output_path: Path, override: bool
+        self, output_path: Path, override: bool
     ) -> None:
         requirement_file_path = output_path.parent / "requirements.txt"
         if requirement_file_path.exists() and override:
             raise ValueError(
                 f"Requirement file exists in {output_path.parent} and override is not allowed!"
             )
-        file_content_list = [f"{k}=={v}" for k, v in requirements.items()]
+        file_content_list = [f"{k}=={v}" for k, v in self.requirements.items()]
         with requirement_file_path.open("w") as f:
             f.write("\n".join(file_content_list))
 

@@ -20,7 +20,7 @@ class Poetbricks:
         dbx.load_requirement_file()
         poetry.load_requirement_file()
 
-        return Poetbricks(dbx_req=dbx, poetry_req=poetry)
+        return cls(dbx_req=dbx, poetry_req=poetry)
 
     def write_pip_requirement_file(self, output_path: Path, override: bool) -> None:
         complement = PythonRequirement.complement_requirements(
