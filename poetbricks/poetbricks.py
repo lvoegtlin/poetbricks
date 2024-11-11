@@ -27,7 +27,7 @@ class Poetbricks:
             source=self.poetry_req, check=self.dbx_req
         )
         print(complement)
-        # PythonRequirement.save_complement_requirement_file(
+        # save_complement_requirement_file(
         #    requirements=complement, output_path=output_path, override=override
         # )
 

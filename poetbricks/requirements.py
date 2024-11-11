@@ -45,6 +45,7 @@ class PythonRequirement(ABC):
         source: "PythonRequirement",
         check: "PythonRequirement",
     ) -> Dict[str, str]:
+        # TODO:return requirement pipfile object and not just a dict
         return {
             k: v
             for k, v in source.requirements.items()
