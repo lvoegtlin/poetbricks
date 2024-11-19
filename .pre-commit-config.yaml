@@ -12,7 +12,7 @@ repos:
   # linter and formatter
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
-    rev: v0.7.3
+    rev: v0.7.4
     hooks:
         # Run the linter.
       - id: ruff
@@ -25,7 +25,7 @@ repos:
 
   # type checker
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.388
+    rev: v1.1.389
     hooks:
       - id: pyright
 
